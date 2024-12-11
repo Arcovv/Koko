@@ -33,6 +33,7 @@ final class FriendsViewController: UIViewController {
     init(
         viewModel: FriendsViewModelType = FriendsViewModel(appDependency: .current)
     ) {
+        AppDependency.current = viewModel.appDependency
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		2D2711242D087A4C001EF0ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2711232D087A4C001EF0ED /* AppDelegate.swift */; };
 		2D2711262D087A4C001EF0ED /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2711252D087A4C001EF0ED /* SceneDelegate.swift */; };
-		2D2711282D087A4C001EF0ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2711272D087A4C001EF0ED /* ViewController.swift */; };
+		2D2711282D087A4C001EF0ED /* SetStragetyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2711272D087A4C001EF0ED /* SetStragetyViewController.swift */; };
 		2D27112D2D087A4D001EF0ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D27112C2D087A4D001EF0ED /* Assets.xcassets */; };
 		2D2711302D087A4D001EF0ED /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 2D27112F2D087A4D001EF0ED /* Base */; };
 		2D2711452D087A4D001EF0ED /* KokoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2711442D087A4D001EF0ED /* KokoUITests.swift */; };
@@ -81,7 +81,7 @@
 		2D2711202D087A4C001EF0ED /* Koko.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Koko.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D2711232D087A4C001EF0ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D2711252D087A4C001EF0ED /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2D2711272D087A4C001EF0ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2D2711272D087A4C001EF0ED /* SetStragetyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetStragetyViewController.swift; sourceTree = "<group>"; };
 		2D27112C2D087A4D001EF0ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D27112F2D087A4D001EF0ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D2711312D087A4D001EF0ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -186,7 +186,7 @@
 				2D2711312D087A4D001EF0ED /* Info.plist */,
 				2D2711232D087A4C001EF0ED /* AppDelegate.swift */,
 				2D2711252D087A4C001EF0ED /* SceneDelegate.swift */,
-				2D2711272D087A4C001EF0ED /* ViewController.swift */,
+				2D2711272D087A4C001EF0ED /* SetStragetyViewController.swift */,
 				2D27112C2D087A4D001EF0ED /* Assets.xcassets */,
 				2D27115B2D087D36001EF0ED /* App */,
 				2D27115C2D087D57001EF0ED /* AppClient */,
@@ -508,7 +508,7 @@
 				2D27115A2D087D2D001EF0ED /* FriendsViewModel.swift in Sources */,
 				2D2711B92D0A2893001EF0ED /* FriendInvitingUnfoldedCell.swift in Sources */,
 				2D2711B72D0A27E3001EF0ED /* FriendInvitingUnfoldedCollectionView.swift in Sources */,
-				2D2711282D087A4C001EF0ED /* ViewController.swift in Sources */,
+				2D2711282D087A4C001EF0ED /* SetStragetyViewController.swift in Sources */,
 				2D2711652D087DA5001EF0ED /* ApiClient.swift in Sources */,
 				2D27119D2D092CAD001EF0ED /* FriendsCollectionViewCell.swift in Sources */,
 				2D27118F2D089886001EF0ED /* FriendOrChatToolItemView.swift in Sources */,

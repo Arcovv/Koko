@@ -11,6 +11,17 @@ enum ApiClientStrategy: CaseIterable {
     case emptyFriends
     case mixedFriends
     case friendsWithInviting
+    
+    var buttonTitle: String {
+        switch self {
+        case .emptyFriends:
+            return "設定為無好友畫面"
+        case .mixedFriends:
+            return "只有好友列表，同時 Request 兩個資料源"
+        case .friendsWithInviting:
+            return "好友列表含邀請"
+        }
+    }
 }
 
 final class AppDependency {

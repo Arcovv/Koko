@@ -24,6 +24,7 @@ protocol FriendsViewModelOutputs: AnyObject {
 }
 
 protocol FriendsViewModelType: AnyObject {
+    var appDependency: AppDependency { get }
     var inputs: FriendsViewModelInputs { get }
     var outputs: FriendsViewModelOutputs { get }
 }
@@ -33,6 +34,7 @@ final class FriendsViewModel:
     FriendsViewModelInputs,
     FriendsViewModelOutputs
 {
+    let appDependency: AppDependency
     var inputs: FriendsViewModelInputs { return self }
     var outputs: FriendsViewModelOutputs { return self }
     
@@ -105,6 +107,7 @@ final class FriendsViewModel:
             .bind(to: isRefreshingRelay)
             .disposed(by: disposeBag)
         
+        self.appDependency = appDependency
         self.friendInvitings = friendInvitingsRelay.asSignal()
         self.friendsInList = displayedFriends.asSignal()
         self.isFriendsEmpty = isFriendsEmptyRelay.asSignal()

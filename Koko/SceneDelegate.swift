@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Handle `Friends` feature
         do {
-            let viewController = FriendsViewController()
+            let viewController = SetStragetyViewController()
             let navigationController = BaseNavigationController(root: viewController)
             
             window?.rootViewController = navigationController
