@@ -17,7 +17,7 @@ extension ApiClient {
         getFriends: {
             let friends: [Friend]
             
-            switch AppDependency.shared.apiClientStrategy {
+            switch AppDependency.current.apiClientStrategy {
             case .emptyFriends:
                 friends = ApiClientStrategy.getEmptyFriends()
                 

@@ -31,7 +31,7 @@ final class FriendsViewController: UIViewController {
     deinit { print("FriendsViewController deinit") }
     
     init(
-        viewModel: FriendsViewModelType = FriendsViewModel(appDependency: .shared)
+        viewModel: FriendsViewModelType = FriendsViewModel(appDependency: .current)
     ) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)

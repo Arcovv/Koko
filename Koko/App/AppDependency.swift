@@ -7,15 +7,23 @@
 
 import Foundation
 
-enum ApiClientStrategy {
+enum ApiClientStrategy: CaseIterable {
     case emptyFriends
     case mixedFriends
     case friendsWithInviting
 }
 
 final class AppDependency {
-    static let shared = AppDependency()
+    static var current = AppDependency()
     
-    let apiClient = ApiClient.apiClientLocal
-    var apiClientStrategy: ApiClientStrategy = .friendsWithInviting
+    var apiClient: ApiClient
+    var apiClientStrategy: ApiClientStrategy
+    
+    init(
+        apiClient: ApiClient = .apiClientLocal,
+        apiClientStrategy: ApiClientStrategy = .friendsWithInviting
+    ) {
+        self.apiClient = apiClient
+        self.apiClientStrategy = apiClientStrategy
+    }
 }

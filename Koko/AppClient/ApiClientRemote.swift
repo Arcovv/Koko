@@ -19,7 +19,7 @@ extension ApiClient {
         getFriends: {
             let friendsObservable: Observable<[Friend]>
             
-            switch AppDependency.shared.apiClientStrategy {
+            switch AppDependency.current.apiClientStrategy {
             case .emptyFriends:
                 friendsObservable = getResponses(url: "https://dimanyen.github.io/friend4.json")
                 
