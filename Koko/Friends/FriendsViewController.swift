@@ -108,8 +108,7 @@ final class FriendsViewController: UIViewController {
         
         viewModel.outputs.friendInvitings
             .emit(with: self, onNext: { (_self, invitings) in
-                _self.headerFeatureView.friendInvitingGroupView.setFriendsInvitingModels(invitings)
-                _self.headerFeatureView.friendInvitingUnfoldedCollectionView.setFriends(invitings)
+                _self.headerFeatureView.setFriendInvitings(invitings)
             })
             .disposed(by: disposeBag)
         

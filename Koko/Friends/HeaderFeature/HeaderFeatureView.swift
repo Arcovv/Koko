@@ -19,6 +19,8 @@ final class HeaderFeatureView: UIStackView {
     let friendOrChatToolView = FriendOrChatToolView()
     let divisionView = UIView()
     
+    private(set) var friendsInvitings: [Friend] = []
+    
     let pinchGropViewGesture = UIPinchGestureRecognizer()
     let pinchUnfoldedCollectionViewGesture = UIPinchGestureRecognizer()
     private var isHandlingPinchGesture = false
@@ -102,7 +104,14 @@ final class HeaderFeatureView: UIStackView {
         }
     }
     
-    func updateCollapseView() {
+    func setFriendInvitings(_ friends: [Friend]) {
+        self.friendsInvitings = friends
+        
+        friendInvitingGroupView.setFriendsInvitingModels(friends)
+        friendInvitingUnfoldedCollectionView.setFriends(friends)
+    }
+    
+    private func updateCollapseView() {
         friendInvitingGroupView.removeFromSuperview()
         friendInvitingUnfoldedCollectionView.removeFromSuperview()
         
@@ -125,8 +134,8 @@ final class HeaderFeatureView: UIStackView {
         }
     }
     
-    @objc func handlePinchGroupView(recognizer: UIPinchGestureRecognizer) {
-        guard !isHandlingPinchGesture && recognizer.scale >= 1 else { return }
+    @objc private func handlePinchGroupView(recognizer: UIPinchGestureRecognizer) {
+        guard friendsInvitings.count > 1 && !isHandlingPinchGesture && recognizer.scale >= 1 else { return }
         
         isHandlingPinchGesture = true
         
@@ -136,7 +145,7 @@ final class HeaderFeatureView: UIStackView {
         isHandlingPinchGesture = false
     }
     
-    @objc func handlePinchUnfoldedCollectionView(recognizer: UIPinchGestureRecognizer) {
+    @objc private func handlePinchUnfoldedCollectionView(recognizer: UIPinchGestureRecognizer) {
         guard !isHandlingPinchGesture && recognizer.scale < 1 else { return }
         
         isHandlingPinchGesture = true
