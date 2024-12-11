@@ -56,6 +56,7 @@
 		2D2711B32D09C2AC001EF0ED /* FriendInvitingShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2711B22D09C2AC001EF0ED /* FriendInvitingShadowView.swift */; };
 		2D2711B72D0A27E3001EF0ED /* FriendInvitingUnfoldedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2711B62D0A27E3001EF0ED /* FriendInvitingUnfoldedCollectionView.swift */; };
 		2D2711B92D0A2893001EF0ED /* FriendInvitingUnfoldedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2711B82D0A2893001EF0ED /* FriendInvitingUnfoldedCell.swift */; };
+		2D2711BB2D0A38F6001EF0ED /* ApiClientRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2711BA2D0A38F6001EF0ED /* ApiClientRemote.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,7 @@
 		2D2711B22D09C2AC001EF0ED /* FriendInvitingShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInvitingShadowView.swift; sourceTree = "<group>"; };
 		2D2711B62D0A27E3001EF0ED /* FriendInvitingUnfoldedCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInvitingUnfoldedCollectionView.swift; sourceTree = "<group>"; };
 		2D2711B82D0A2893001EF0ED /* FriendInvitingUnfoldedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInvitingUnfoldedCell.swift; sourceTree = "<group>"; };
+		2D2711BA2D0A38F6001EF0ED /* ApiClientRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientRemote.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,7 @@
 				2D2711632D087D95001EF0ED /* Models */,
 				2D2711642D087DA5001EF0ED /* ApiClient.swift */,
 				2D27116A2D088302001EF0ED /* ApiClientLocal.swift */,
+				2D2711BA2D0A38F6001EF0ED /* ApiClientRemote.swift */,
 			);
 			path = AppClient;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				2D2711652D087DA5001EF0ED /* ApiClient.swift in Sources */,
 				2D27119D2D092CAD001EF0ED /* FriendsCollectionViewCell.swift in Sources */,
 				2D27118F2D089886001EF0ED /* FriendOrChatToolItemView.swift in Sources */,
+				2D2711BB2D0A38F6001EF0ED /* ApiClientRemote.swift in Sources */,
 				2D2711842D088D54001EF0ED /* TopToolView.swift in Sources */,
 				2D2711942D08B94A001EF0ED /* AddFriendButton.swift in Sources */,
 				2D2711992D08BE7C001EF0ED /* GradientView.swift in Sources */,
