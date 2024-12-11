@@ -107,8 +107,17 @@ final class HeaderFeatureView: UIStackView {
     func setFriendInvitings(_ friends: [Friend]) {
         self.friendsInvitings = friends
         
-        friendInvitingGroupView.setFriendsInvitingModels(friends)
-        friendInvitingUnfoldedCollectionView.setFriends(friends)
+        if friends.isEmpty {
+            removeCollapseViews()
+        } else {
+            friendInvitingGroupView.setFriendsInvitingModels(friends)
+            friendInvitingUnfoldedCollectionView.setFriends(friends)
+        }
+    }
+    
+    private func removeCollapseViews() {
+        friendInvitingGroupView.removeFromSuperview()
+        friendInvitingUnfoldedCollectionView.removeFromSuperview()
     }
     
     private func updateCollapseView() {

@@ -43,7 +43,7 @@ final class SetStragetyViewController: UIViewController {
                     let friendsViewController = FriendsViewController(viewModel: viewModel)
                     friendsViewController.modalPresentationStyle = .overFullScreen
 
-                    _self.present(friendsViewController, animated: false)
+                    _self.navigationController?.pushViewController(friendsViewController, animated: true)
                 })
                 .disposed(by: disposeBag)
         }

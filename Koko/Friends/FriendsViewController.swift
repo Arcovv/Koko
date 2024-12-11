@@ -102,6 +102,10 @@ final class FriendsViewController: UIViewController {
             make.top.leading.bottom.trailing.equalToSuperview()
 //            make.bottom.equalTo(view.safeAreaLayoutGuide)
         }
+        
+        headerFeatureView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+        }
     }
     
     private func setupBinding() {
@@ -187,6 +191,10 @@ final class FriendsViewController: UIViewController {
         
         searchBarView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(30)
+        }
+        
+        friendsCollectionView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
         }
     }
 }
