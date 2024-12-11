@@ -12,7 +12,6 @@
 		2D2711282D087A4C001EF0ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2711272D087A4C001EF0ED /* ViewController.swift */; };
 		2D27112D2D087A4D001EF0ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D27112C2D087A4D001EF0ED /* Assets.xcassets */; };
 		2D2711302D087A4D001EF0ED /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 2D27112F2D087A4D001EF0ED /* Base */; };
-		2D27113B2D087A4D001EF0ED /* KokoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D27113A2D087A4D001EF0ED /* KokoTests.swift */; };
 		2D2711452D087A4D001EF0ED /* KokoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2711442D087A4D001EF0ED /* KokoUITests.swift */; };
 		2D2711472D087A4D001EF0ED /* KokoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2711462D087A4D001EF0ED /* KokoUITestsLaunchTests.swift */; };
 		2D2711552D087C4C001EF0ED /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 2D2711542D087C4C001EF0ED /* RxCocoa */; };
@@ -57,6 +56,8 @@
 		2D2711B72D0A27E3001EF0ED /* FriendInvitingUnfoldedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2711B62D0A27E3001EF0ED /* FriendInvitingUnfoldedCollectionView.swift */; };
 		2D2711B92D0A2893001EF0ED /* FriendInvitingUnfoldedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2711B82D0A2893001EF0ED /* FriendInvitingUnfoldedCell.swift */; };
 		2D2711BB2D0A38F6001EF0ED /* ApiClientRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2711BA2D0A38F6001EF0ED /* ApiClientRemote.swift */; };
+		2D2711BD2D0A3FE5001EF0ED /* FriendsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2711BC2D0A3FE5001EF0ED /* FriendsViewModelTests.swift */; };
+		2D2711BF2D0A41E7001EF0ED /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 2D2711BE2D0A41E7001EF0ED /* RxBlocking */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,7 +86,6 @@
 		2D27112F2D087A4D001EF0ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D2711312D087A4D001EF0ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D2711362D087A4D001EF0ED /* KokoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KokoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2D27113A2D087A4D001EF0ED /* KokoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KokoTests.swift; sourceTree = "<group>"; };
 		2D2711402D087A4D001EF0ED /* KokoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KokoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D2711442D087A4D001EF0ED /* KokoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KokoUITests.swift; sourceTree = "<group>"; };
 		2D2711462D087A4D001EF0ED /* KokoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KokoUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -125,6 +125,7 @@
 		2D2711B62D0A27E3001EF0ED /* FriendInvitingUnfoldedCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInvitingUnfoldedCollectionView.swift; sourceTree = "<group>"; };
 		2D2711B82D0A2893001EF0ED /* FriendInvitingUnfoldedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInvitingUnfoldedCell.swift; sourceTree = "<group>"; };
 		2D2711BA2D0A38F6001EF0ED /* ApiClientRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientRemote.swift; sourceTree = "<group>"; };
+		2D2711BC2D0A3FE5001EF0ED /* FriendsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D2711BF2D0A41E7001EF0ED /* RxBlocking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,7 +201,7 @@
 		2D2711392D087A4D001EF0ED /* KokoTests */ = {
 			isa = PBXGroup;
 			children = (
-				2D27113A2D087A4D001EF0ED /* KokoTests.swift */,
+				2D2711BC2D0A3FE5001EF0ED /* FriendsViewModelTests.swift */,
 			);
 			path = KokoTests;
 			sourceTree = "<group>";
@@ -382,6 +384,9 @@
 				2D2711382D087A4D001EF0ED /* PBXTargetDependency */,
 			);
 			name = KokoTests;
+			packageProductDependencies = (
+				2D2711BE2D0A41E7001EF0ED /* RxBlocking */,
+			);
 			productName = KokoTests;
 			productReference = 2D2711362D087A4D001EF0ED /* KokoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -531,7 +536,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D27113B2D087A4D001EF0ED /* KokoTests.swift in Sources */,
+				2D2711BD2D0A3FE5001EF0ED /* FriendsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -936,6 +941,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2D2711A72D096CA4001EF0ED /* XCRemoteSwiftPackageReference "RxSwiftExt" */;
 			productName = RxSwiftExt;
+		};
+		2D2711BE2D0A41E7001EF0ED /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2D2711532D087C4C001EF0ED /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
