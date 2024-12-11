@@ -21,8 +21,13 @@ final class SearchBarView: UIStackView {
         spacing = 15
         alignment = .center
         
+        layoutMargins = UIEdgeInsets(top: 0, left: 30, bottom: 0, right: 30)
+        isLayoutMarginsRelativeArrangement = true
+        
         searchBar.searchBarStyle = .minimal
         searchBar.placeholder = "想轉一筆給誰呢？"
+        searchBar.setContentHuggingPriority(UILayoutPriority(500), for: .horizontal)
+        searchBar.setContentCompressionResistancePriority(UILayoutPriority(500), for: .horizontal)
         addArrangedSubview(searchBar)
         
         do {

@@ -190,7 +190,7 @@ final class FriendsViewController: UIViewController {
         stackView.addArrangedSubview(friendsCollectionView)
         
         searchBarView.snp.makeConstraints { make in
-            make.leading.trailing.equalToSuperview().inset(30)
+            make.leading.trailing.equalToSuperview()
         }
         
         friendsCollectionView.snp.makeConstraints { make in
