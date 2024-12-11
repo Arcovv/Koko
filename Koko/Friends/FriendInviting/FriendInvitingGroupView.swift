@@ -14,13 +14,12 @@ final class FriendInvitingGroupView: UIView {
     
     private let itemsStackView = UIStackView()
     private(set) var itemViews: [FriendInvitingItemView] = []
-    private(set) var isCollapsed = true
     private(set) var friendInvitings: [Friend] = []
     
     init() {
         super.init(frame: .zero)
         
-        backgroundColor = .yellow
+//        backgroundColor = .yellow
         
         itemsStackView.axis = .vertical
         itemsStackView.spacing = 10
@@ -33,18 +32,12 @@ final class FriendInvitingGroupView: UIView {
     }
     
     func setFriendsInvitingModels(_ friends: [Friend]) {
-        print("friends counts: \(friends.count)")
         self.friendInvitings = friends
         
         itemViews.forEach { $0.removeFromSuperview() }
-        
         itemViews = []
         
-        if isCollapsed {
-            displayLikeCollapsed()
-        } else {
-            displayAllSubviews()
-        }
+        displayLikeCollapsed()
     }
     
     private func displayLikeCollapsed() {
@@ -74,21 +67,5 @@ final class FriendInvitingGroupView: UIView {
                 make.centerY.equalToSuperview().offset(centerYOffset)
             }
         }
-    }
-    
-    private func displayAllSubviews() {
-        addSubview(itemsStackView)
-        
-        itemsStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-
-        itemViews = friendInvitings.map { friend in
-            let itemView = FriendInvitingItemView()
-            itemView.setFriend(friend)
-            return itemView
-        }
-        
-        itemViews.forEach { itemsStackView.addArrangedSubview($0) }
     }
 }

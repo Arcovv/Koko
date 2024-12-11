@@ -61,13 +61,11 @@ final class FriendsViewModel:
         let isRefreshingRelay = BehaviorRelay(value: false)
         
         let delayedPullToFresh = pullToRefresh.asObservable()
-            .debug("delayedPullToFresh")
             .do(onNext: { isRefreshingRelay.accept(true) })
             .flatMap { Observable.just(()).delay(.seconds(2), scheduler: MainScheduler.instance) } // 測試用，看起來真實一點
         
         Observable.of(viewDidLoad.asObservable(), delayedPullToFresh)
             .merge()
-            .debug("SendingRequest")
             .flatMapLatest { appDependency.apiClient.getFriends() }
             .map { $0.deduplicated().sorted(by: >) }
             .do(onNext: { friendsRelay.accept($0) })
@@ -77,7 +75,6 @@ final class FriendsViewModel:
         
         searchingText.asObservable()
             .unwrap()
-            .debug("searchingText")
             .withLatestFrom(friendsRelay.asObservable()) { ($0, $1) }
             .map { (searchingText, friends) in
                 friends.filter { friend in
@@ -108,7 +105,7 @@ final class FriendsViewModel:
             .bind(to: isRefreshingRelay)
             .disposed(by: disposeBag)
         
-        self.friendInvitings = friendInvitingsRelay.asSignal() // TODO:
+        self.friendInvitings = friendInvitingsRelay.asSignal()
         self.friendsInList = displayedFriends.asSignal()
         self.isFriendsEmpty = isFriendsEmptyRelay.asSignal()
         self.isRefreshing = isRefreshingRelay.asDriver()

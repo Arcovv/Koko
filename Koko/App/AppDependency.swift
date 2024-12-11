@@ -17,5 +17,5 @@ final class AppDependency {
     static let shared = AppDependency()
     
     let apiClient = ApiClient.apiClientLocal
-    var apiClientStrategy: ApiClientStrategy = .mixedFriends
+    var apiClientStrategy: ApiClientStrategy = .friendsWithInviting
 }

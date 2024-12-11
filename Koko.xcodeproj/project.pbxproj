@@ -54,6 +54,8 @@
 		2D2711AB2D097D33001EF0ED /* FriendInvitingItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2711AA2D097D33001EF0ED /* FriendInvitingItemView.swift */; };
 		2D2711B12D09C1CB001EF0ED /* FriendInvitingGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2711B02D09C1CB001EF0ED /* FriendInvitingGroupView.swift */; };
 		2D2711B32D09C2AC001EF0ED /* FriendInvitingShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2711B22D09C2AC001EF0ED /* FriendInvitingShadowView.swift */; };
+		2D2711B72D0A27E3001EF0ED /* FriendInvitingUnfoldedCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2711B62D0A27E3001EF0ED /* FriendInvitingUnfoldedCollectionView.swift */; };
+		2D2711B92D0A2893001EF0ED /* FriendInvitingUnfoldedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2711B82D0A2893001EF0ED /* FriendInvitingUnfoldedCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +121,8 @@
 		2D2711AA2D097D33001EF0ED /* FriendInvitingItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInvitingItemView.swift; sourceTree = "<group>"; };
 		2D2711B02D09C1CB001EF0ED /* FriendInvitingGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInvitingGroupView.swift; sourceTree = "<group>"; };
 		2D2711B22D09C2AC001EF0ED /* FriendInvitingShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInvitingShadowView.swift; sourceTree = "<group>"; };
+		2D2711B62D0A27E3001EF0ED /* FriendInvitingUnfoldedCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInvitingUnfoldedCollectionView.swift; sourceTree = "<group>"; };
+		2D2711B82D0A2893001EF0ED /* FriendInvitingUnfoldedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInvitingUnfoldedCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,6 +331,8 @@
 				2D2711B02D09C1CB001EF0ED /* FriendInvitingGroupView.swift */,
 				2D2711AA2D097D33001EF0ED /* FriendInvitingItemView.swift */,
 				2D2711B22D09C2AC001EF0ED /* FriendInvitingShadowView.swift */,
+				2D2711B62D0A27E3001EF0ED /* FriendInvitingUnfoldedCollectionView.swift */,
+				2D2711B82D0A2893001EF0ED /* FriendInvitingUnfoldedCell.swift */,
 			);
 			path = FriendInviting;
 			sourceTree = "<group>";
@@ -492,6 +498,8 @@
 				2D27119B2D0928C9001EF0ED /* EmptyIdView.swift in Sources */,
 				2D27116E2D088547001EF0ED /* AppResponse.swift in Sources */,
 				2D27115A2D087D2D001EF0ED /* FriendsViewModel.swift in Sources */,
+				2D2711B92D0A2893001EF0ED /* FriendInvitingUnfoldedCell.swift in Sources */,
+				2D2711B72D0A27E3001EF0ED /* FriendInvitingUnfoldedCollectionView.swift in Sources */,
 				2D2711282D087A4C001EF0ED /* ViewController.swift in Sources */,
 				2D2711652D087DA5001EF0ED /* ApiClient.swift in Sources */,
 				2D27119D2D092CAD001EF0ED /* FriendsCollectionViewCell.swift in Sources */,

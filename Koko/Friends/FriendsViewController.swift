@@ -13,14 +13,11 @@ import RxDataSources
 import RxSwiftExt
 
 final class FriendsViewController: UIViewController {
-    private let scrollView = UIScrollView()
-    private let contentView = UIView()
     private let stackView = UIStackView()
     private let headerFeatureView = HeaderFeatureView()
     private let searchBarView = SearchBarView()
     private let refreshControl = UIRefreshControl()
     private var friendsCollectionView: UICollectionView!
-    private let bottomSpacerView = UIView()
     private var dataSource: RxCollectionViewSectionedAnimatedDataSource<FriendsSection>!
     private let friendEmptyView = FriendEmptyView()
     
@@ -47,10 +44,6 @@ final class FriendsViewController: UIViewController {
     
     // MARK: - Life Cycle
     
-    override func loadView() {
-        view = scrollView
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,20 +56,12 @@ final class FriendsViewController: UIViewController {
     
     private func setupUI() {
         view.backgroundColor = .white
-//        view.addSubview(scrollView)
-        
-        scrollView.showsVerticalScrollIndicator = false
-        scrollView.showsHorizontalScrollIndicator = false
-        scrollView.addSubview(contentView)
-        
-        contentView.addSubview(stackView)
-        
+        view.addSubview(stackView)
+
         stackView.axis = .vertical
         stackView.spacing = 0
-        stackView.backgroundColor = .white
+//        stackView.backgroundColor = .yellow
         stackView.addArrangedSubview(headerFeatureView)
-        
-        bottomSpacerView.setContentHuggingPriority(UILayoutPriority(200), for: .vertical)
         
         // Setup `friendsCollectionView`
         do {
@@ -111,15 +96,10 @@ final class FriendsViewController: UIViewController {
         )
         
         // layout
-        
-        contentView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-            make.width.equalToSuperview()
-            make.height.equalToSuperview().priority(UILayoutPriority(250))
-        }
-        
+
         stackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.top.leading.bottom.trailing.equalToSuperview()
+//            make.bottom.equalTo(view.safeAreaLayoutGuide)
         }
     }
     
@@ -129,6 +109,7 @@ final class FriendsViewController: UIViewController {
         viewModel.outputs.friendInvitings
             .emit(with: self, onNext: { (_self, invitings) in
                 _self.headerFeatureView.friendInvitingGroupView.setFriendsInvitingModels(invitings)
+                _self.headerFeatureView.friendInvitingUnfoldedCollectionView.setFriends(invitings)
             })
             .disposed(by: disposeBag)
         
@@ -184,7 +165,7 @@ final class FriendsViewController: UIViewController {
         
         searchBarView.searchBar.rx.text
             .asObservable()
-            .debug("searchBarView.searchBar.rx.text")
+//            .debug("searchBarView.searchBar.rx.text")
             .bind(to: viewModel.inputs.searchingText)
             .disposed(by: disposeBag)
     }
@@ -192,11 +173,9 @@ final class FriendsViewController: UIViewController {
     private func showEmptyView() {
         searchBarView.removeFromSuperview()
         friendsCollectionView.removeFromSuperview()
-        bottomSpacerView.removeFromSuperview()
         
         stackView.setCustomSpacing(30, after: headerFeatureView)
         stackView.addArrangedSubview(friendEmptyView)
-        stackView.addArrangedSubview(bottomSpacerView)
     }
     
     private func showFriendsList() {
@@ -205,7 +184,6 @@ final class FriendsViewController: UIViewController {
         stackView.setCustomSpacing(0, after: headerFeatureView)
         stackView.addArrangedSubview(searchBarView)
         stackView.addArrangedSubview(friendsCollectionView)
-        stackView.addArrangedSubview(bottomSpacerView)
         
         searchBarView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview().inset(30)
