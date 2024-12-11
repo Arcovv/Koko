@@ -12,21 +12,22 @@ import RxCocoa
 import RxBlocking
 
 final class FriendsViewModelTests: XCTestCase {
+    var viewModel: FriendsViewModelType!
+    var disposeBag: DisposeBag!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        disposeBag = DisposeBag()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        viewModel = nil
+        disposeBag = nil
     }
 
     func testIsFriendsEmpty() throws {
         let appDependency = AppDependency(apiClient: .apiClientLocal, apiClientStrategy: .emptyFriends)
         AppDependency.current = appDependency
-
-        let viewModel = FriendsViewModel(appDependency: appDependency)
-        let disposeBag = DisposeBag()
+        viewModel = FriendsViewModel(appDependency: appDependency)
 
         let expect = expectation(description: #function)
         var result: Bool!
@@ -47,6 +48,33 @@ final class FriendsViewModelTests: XCTestCase {
             }
             
             XCTAssertTrue(result)
+        }
+    }
+    
+    func testIsFriendsNotEmpty() throws {
+        let appDependency = AppDependency(apiClient: .apiClientLocal, apiClientStrategy: .mixedFriends)
+        AppDependency.current = appDependency
+        viewModel = FriendsViewModel(appDependency: appDependency)
+
+        let expect = expectation(description: #function)
+        var result: Bool!
+        
+        viewModel.outputs.isFriendsEmpty
+            .emit(onNext: { isFriendsEmpty in
+                result = isFriendsEmpty
+                expect.fulfill()
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.inputs.viewDidLoad.accept(())
+        
+        waitForExpectations(timeout: 1.0) { error in
+            guard error == nil else {
+                XCTFail(error!.localizedDescription)
+                return
+            }
+            
+            XCTAssertFalse(result)
         }
     }
 }
