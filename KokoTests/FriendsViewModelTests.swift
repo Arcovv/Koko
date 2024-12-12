@@ -209,6 +209,33 @@ final class FriendsViewModelTests: XCTestCase {
         viewModel.inputs.viewDidLoad.accept(())
         viewModel.inputs.pullToRefresh.accept(())
         
+        waitForExpectations(timeout: 2.0) { error in
+            guard error == nil else {
+                XCTFail(error!.localizedDescription)
+                return
+            }
+            
+            XCTAssertEqual(result, true)
+        }
+    }
+    
+    func testInvitedFriendsCountIsTwoInFriendsWithInviting() {
+        let appDependency = AppDependency(apiClient: .apiClientLocal, apiClientStrategy: .friendsWithInviting)
+        AppDependency.current = appDependency
+        viewModel = FriendsViewModel(appDependency: appDependency)
+
+        var expect = expectation(description: #function)
+        var result = false
+        
+        viewModel.outputs.invitedFriends
+            .emit(onNext: { invitedFriends in
+                result = invitedFriends.count == 2
+                expect.fulfill()
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.inputs.viewDidLoad.accept(())
+        
         waitForExpectations(timeout: 1.0) { error in
             guard error == nil else {
                 XCTFail(error!.localizedDescription)
