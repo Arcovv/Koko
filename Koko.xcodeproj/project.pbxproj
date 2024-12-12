@@ -58,6 +58,7 @@
 		2D2711BB2D0A38F6001EF0ED /* ApiClientRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2711BA2D0A38F6001EF0ED /* ApiClientRemote.swift */; };
 		2D2711BD2D0A3FE5001EF0ED /* FriendsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2711BC2D0A3FE5001EF0ED /* FriendsViewModelTests.swift */; };
 		2D2711BF2D0A41E7001EF0ED /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 2D2711BE2D0A41E7001EF0ED /* RxBlocking */; };
+		2D2711C12D0A5A1D001EF0ED /* FriendOrChatBadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2711C02D0A5A1D001EF0ED /* FriendOrChatBadgeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		2D2711B82D0A2893001EF0ED /* FriendInvitingUnfoldedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendInvitingUnfoldedCell.swift; sourceTree = "<group>"; };
 		2D2711BA2D0A38F6001EF0ED /* ApiClientRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientRemote.swift; sourceTree = "<group>"; };
 		2D2711BC2D0A3FE5001EF0ED /* FriendsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewModelTests.swift; sourceTree = "<group>"; };
+		2D2711C02D0A5A1D001EF0ED /* FriendOrChatBadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendOrChatBadgeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,6 +319,7 @@
 			children = (
 				2D27118E2D089886001EF0ED /* FriendOrChatToolItemView.swift */,
 				2D27118C2D089560001EF0ED /* FriendOrChatToolView.swift */,
+				2D2711C02D0A5A1D001EF0ED /* FriendOrChatBadgeView.swift */,
 			);
 			path = FriendOrChat;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				2D2711922D08B933001EF0ED /* FriendEmptyView.swift in Sources */,
 				2D2711A62D096518001EF0ED /* FriendsSection.swift in Sources */,
 				2D2711672D0881F2001EF0ED /* AppState.swift in Sources */,
+				2D2711C12D0A5A1D001EF0ED /* FriendOrChatBadgeView.swift in Sources */,
 				2D27118D2D089560001EF0ED /* FriendOrChatToolView.swift in Sources */,
 				2D27118B2D0892C7001EF0ED /* AppFont.swift in Sources */,
 				2D2711732D0889C2001EF0ED /* AppColor.swift in Sources */,

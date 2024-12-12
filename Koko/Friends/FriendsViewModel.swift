@@ -19,6 +19,7 @@ protocol FriendsViewModelInputs: AnyObject {
 protocol FriendsViewModelOutputs: AnyObject {
     var friendInvitings: Signal<[Friend]> { get }
     var friendsInList: Signal<[Friend]> { get }
+    var invitedFriends: Signal<[Friend]> { get }
     var isFriendsEmpty: Signal<Bool> { get }
     var isRefreshing: Driver<Bool> { get }
 }
@@ -48,6 +49,7 @@ final class FriendsViewModel:
     
     let friendInvitings: Signal<[Friend]>
     let friendsInList: Signal<[Friend]>
+    let invitedFriends: Signal<[Friend]>
     let isFriendsEmpty: Signal<Bool>
     let isRefreshing: Driver<Bool>
     
@@ -59,6 +61,7 @@ final class FriendsViewModel:
         let friendsRelay = PublishRelay<[Friend]>()
         let friendInvitingsRelay = PublishRelay<[Friend]>()
         let displayedFriends = PublishRelay<[Friend]>()
+        let invitedFriendsRelay = PublishRelay<[Friend]>()
         let isFriendsEmptyRelay = PublishRelay<Bool>()
         let isRefreshingRelay = BehaviorRelay(value: false)
         
@@ -107,9 +110,15 @@ final class FriendsViewModel:
             .bind(to: isRefreshingRelay)
             .disposed(by: disposeBag)
         
+        friendsRelay.asObservable()
+            .map { $0.filterInvitedFriends() }
+            .bind(to: invitedFriendsRelay)
+            .disposed(by: disposeBag)
+        
         self.appDependency = appDependency
         self.friendInvitings = friendInvitingsRelay.asSignal()
         self.friendsInList = displayedFriends.asSignal()
+        self.invitedFriends = invitedFriendsRelay.asSignal()
         self.isFriendsEmpty = isFriendsEmptyRelay.asSignal()
         self.isRefreshing = isRefreshingRelay.asDriver()
     }
@@ -138,5 +147,9 @@ extension Array where Element == Friend {
     
     func filterInListFriends() -> [Element] {
         return filter { $0.status != .sendInviting }
+    }
+    
+    func filterInvitedFriends() -> [Element] {
+        return filter { $0.status == .inviting }
     }
 }

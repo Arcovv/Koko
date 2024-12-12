@@ -8,8 +8,11 @@
 import Foundation
 
 enum FriendStatus: Int, Decodable {
+    /// status = 0
     case sendInviting
+    /// status = 1
     case finished
+    /// status = 2
     case inviting
 }
 

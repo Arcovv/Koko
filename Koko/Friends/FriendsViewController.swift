@@ -117,6 +117,12 @@ final class FriendsViewController: UIViewController {
             })
             .disposed(by: disposeBag)
         
+        viewModel.outputs.invitedFriends
+            .emit(with: self, onNext: { (_self, invitedFriends) in
+                _self.headerFeatureView.setInvitedFrinds(invitedFriends)
+            })
+            .disposed(by: disposeBag)
+        
         viewModel.outputs.isFriendsEmpty
             .debug()
             .emit(with: self, onNext: { (_self, isFriendsEmpty) in

@@ -19,7 +19,10 @@ final class HeaderFeatureView: UIStackView {
     let friendOrChatToolView = FriendOrChatToolView()
     let divisionView = UIView()
     
+    // status = 1
     private(set) var friendsInvitings: [Friend] = []
+    // status = 2
+    private(set) var invitedFriends: [Friend] = []
     
     let pinchGropViewGesture = UIPinchGestureRecognizer()
     let pinchUnfoldedCollectionViewGesture = UIPinchGestureRecognizer()
@@ -115,6 +118,12 @@ final class HeaderFeatureView: UIStackView {
         }
     }
     
+    func setInvitedFrinds(_ friends: [Friend]) {
+        self.invitedFriends = friends
+        
+        showFriendOrChatToolBadgeIfNeeded()
+    }
+    
     private func removeCollapseViews() {
         friendInvitingGroupView.removeFromSuperview()
         friendInvitingUnfoldedCollectionView.removeFromSuperview()
@@ -163,5 +172,12 @@ final class HeaderFeatureView: UIStackView {
         updateCollapseView()
         
         isHandlingPinchGesture = false
+    }
+    
+    private func showFriendOrChatToolBadgeIfNeeded() {
+        guard invitedFriends.count > 0 else { return }
+        
+        friendOrChatToolView.friendView.setBadge(invitedFriends.count)
+        friendOrChatToolView.chatView.setBadge(100)
     }
 }

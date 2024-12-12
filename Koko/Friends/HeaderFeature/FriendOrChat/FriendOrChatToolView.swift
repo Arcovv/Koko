@@ -17,7 +17,7 @@ final class FriendOrChatToolView: UIStackView {
         super.init(frame: .zero)
         
         axis = .horizontal
-        spacing = 36
+        spacing = 15
 //        alignment = .leading
         distribution = .fill
 //        backgroundColor = .red
